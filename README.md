@@ -41,10 +41,9 @@ cd ~/Desktop/ytloader
 python3 ytloader.py "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
-Or run as a module from the parent folder:
+If you want to run the packaged module directly:
 
 ```bash
-cd ~/Desktop
 python3 -m ytloader.ytloader "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
