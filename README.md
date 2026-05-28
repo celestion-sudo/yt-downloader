@@ -1,6 +1,8 @@
 # ytloader
 
-A tiny command-line YouTube downloader for Linux that saves files to your Downloads folder by default.
+[![CI](https://github.com/celestion-sudo/yt-downloader/actions/workflows/ci.yml/badge.svg)](https://github.com/celestion-sudo/yt-downloader/actions/workflows/ci.yml)
+
+A tiny command-line YouTube downloader for Linux that makes downloading videos fast and easy. It saves downloads to your `Downloads` folder by default and can automatically fall back to the standalone `yt-dlp` binary when Python package installation is blocked.
 
 ## Requirements
 
@@ -103,8 +105,6 @@ Downloading: 100.0% ETA: 0s Speed: 1.2MiB/s
 Download finished, processing...
 ```
 
-If you plan to publish this repository on GitHub, follow the steps below.
-
 ## Common troubleshooting
 
 - If `python3 -m venv .venv` fails, install the system venv package:
@@ -115,29 +115,6 @@ sudo apt install python3-venv
 
 - If `yt-dlp` is missing, the script will use a downloaded binary automatically.
 - If YouTube extraction warns about a JavaScript runtime, install Node or Deno for better compatibility.
-
-## Deploying to GitHub
-
-1. Create a new repository on GitHub.
-2. Push this folder to your new repo:
-
-```bash
-cd ~/Desktop/ytloader
-git init
-git add .
-git commit -m "Initial commit: ytloader"
-git branch -M main
-git remote add origin https://github.com/<your-username>/ytloader.git
-git push -u origin main
-```
-
-3. GitHub Actions will run the `CI` workflow on push to validate syntax and help output.
-
-4. To let others install directly from your repo:
-
-```bash
-pip install git+https://github.com/<your-username>/ytloader.git
-```
 
 Notes:
 
