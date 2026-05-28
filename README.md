@@ -11,6 +11,13 @@ A small Linux command-line downloader for YouTube and other supported sites. It 
 
 ## Installation
 
+Clone the repository using Git so users can install it from the command line:
+
+```bash
+git clone https://github.com/celestion-sudo/yt-downloader.git
+cd yt-downloader
+```
+
 Run the downloader directly from the project folder:
 
 ```bash
