@@ -11,53 +11,58 @@ A small Linux command-line downloader for YouTube so that users can download vid
 
 ## Installation
 
-Clone the repository using Git so users can install it from the command line:
+Clone the repository:
 
 ```bash
 git clone https://github.com/celestion-sudo/yt-downloader.git
 cd yt-downloader
 ```
 
-Run the downloader directly from the project folder:
+Install dependencies and package entrypoints:
 
 ```bash
-python3 ytloader.py "https://www.youtube.com/watch?v=VIDEO_ID"
+python3 -m pip install -e .
 ```
 
-To install the wrapper for easier use:
+If you do not have `python3-venv` installed, install into your local user site instead:
 
 ```bash
-chmod +x ytloader
-sudo mv ytloader /usr/local/bin/ytloader
+python3 -m pip install --user -e .
 ```
 
-If you want an isolated Python environment for development, use a virtualenv:
+If you prefer not to install, you can run the tool directly from source:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+./ytloader.sh "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
-## Try locally first
+## Run from source
 
-From the repository folder:
+From the repository root, use either of these:
 
 ```bash
-cd ~/Desktop/ytloader
-python3 ytloader.py "https://www.youtube.com/watch?v=VIDEO_ID"
+python3 -m ytloader "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
-If you want to run the packaged module directly:
+or:
 
 ```bash
 python3 -m ytloader.ytloader "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
-Check help output:
+## Run the wrapper script
+
+Make the wrapper executable and use it directly from the repo root:
 
 ```bash
-python3 -m ytloader.ytloader --help
+chmod +x ytloader.sh
+./ytloader.sh "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+
+After installation, the `ytloader` CLI is available globally:
+
+```bash
+ytloader "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
 ## Usage
@@ -65,30 +70,30 @@ python3 -m ytloader.ytloader --help
 - Run and paste a URL when prompted:
 
 ```bash
-python3 ytloader.py
+python3 -m ytloader
 ```
 
 - Download directly with a URL:
 
 ```bash
-python3 ytloader.py "https://www.youtube.com/watch?v=VIDEO_ID"
+python3 -m ytloader "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
 - Download audio only:
 
 ```bash
-python3 ytloader.py --audio "https://www.youtube.com/watch?v=VIDEO_ID"
+python3 -m ytloader --audio "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
 - Save to a custom folder:
 
 ```bash
-python3 ytloader.py -o ~/MyDownloads "https://www.youtube.com/watch?v=VIDEO_ID"
+python3 -m ytloader -o ~/MyDownloads "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
 ## Notes
 
-- If Python package installation is blocked, the script will try to download a standalone `yt-dlp` binary to `~/.local/bin/yt-dlp`.
+- If Python package installation is blocked, the tool will try to download a standalone `yt-dlp` binary to `~/.local/bin/yt-dlp`.
 - The default download folder is `Downloads` or the value of `XDG_DOWNLOAD_DIR`.
 - If YouTube extraction warns about a JavaScript runtime, install Node or Deno for better compatibility.
 
