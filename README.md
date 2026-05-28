@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/celestion-sudo/yt-downloader/actions/workflows/ci.yml/badge.svg)](https://github.com/celestion-sudo/yt-downloader/actions/workflows/ci.yml)
 
-A small Linux command-line downloader for YouTube and other supported sites. It saves files to the default Downloads folder and can automatically use a standalone `yt-dlp` binary if Python package installation is unavailable.
+A small Linux command-line downloader for YouTube so that users can download video. It saves files to the default Downloads folder and can automatically use a standalone `yt-dlp` binary if Python package installation is unavailable.
 
 ## Requirements
 
