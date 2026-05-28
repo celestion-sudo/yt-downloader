@@ -11,26 +11,20 @@ A small Linux command-line downloader for YouTube and other supported sites. It 
 
 ## Installation
 
-This tool is easy for users: a virtual environment is optional and only recommended for development or dependency isolation.
-
-### Quick start
-
-Run directly from the project folder:
+Run the downloader directly from the project folder:
 
 ```bash
 python3 ytloader.py "https://www.youtube.com/watch?v=VIDEO_ID"
 ```
 
-If you want a system-wide shortcut, make the wrapper executable once:
+To install the wrapper for easier use:
 
 ```bash
 chmod +x ytloader
 sudo mv ytloader /usr/local/bin/ytloader
 ```
 
-### Optional development setup
-
-If you prefer an isolated environment, use a virtualenv:
+If you want an isolated Python environment for development, use a virtualenv:
 
 ```bash
 python3 -m venv .venv
