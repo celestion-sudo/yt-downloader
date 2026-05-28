@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ytloader"
+version = "0.1.0"
+description = "Tiny yt-dlp based CLI downloader"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = ["yt-dlp>=2024.10.0"]
+license = "MIT"
+
+[project.scripts]
+ytloader = "ytloader.ytloader:main"
